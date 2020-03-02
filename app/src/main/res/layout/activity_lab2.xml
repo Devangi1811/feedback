@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".subject"
+    android:id="@+id/drawerlay">
+    <com.google.android.material.navigation.NavigationView
+        app:headerLayout="@layout/nav_header"
+        android:id="@+id/navigation_view"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/activity_navigation_drawer"
+        />
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".lab2"
+    android:background="@drawable/login">
+    <ScrollView
+        android:id="@+id/scv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <RelativeLayout
+            android:id="@+id/llv"
+            android:layout_width="match_parent"
+            android:layout_height="2400dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="4. Taught every practical"
+                android:textSize="20dp"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="60dp"
+                android:layout_marginStart="5dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Artificial Intelligence-Riddhi Patel"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="20dp"
+                android:layout_marginTop="100dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.hsalf.smilerating.SmileRating
+                    android:id="@+id/smile_rating"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="130dp"
+                    tools:ignore="MissingConstraints" />
+            </RelativeLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="CNS-Manoj Sahu"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="20dp"
+                android:layout_marginTop="210dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.hsalf.smilerating.SmileRating
+                    android:id="@+id/smile_rating1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="240dp"
+                    tools:ignore="MissingConstraints" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Python Programming -Bela mam"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="20dp"
+                android:layout_marginTop="320dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.hsalf.smilerating.SmileRating
+                    android:id="@+id/smile_rating2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="350dp"
+                    tools:ignore="MissingConstraints" />
+            </RelativeLayout>
+
+
+
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="298dp"
+                android:layout_height="96dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="440dp"
+                app:cardCornerRadius="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/subject1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </androidx.cardview.widget.CardView>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.hsalf.smilerating.SmileRating
+                    android:id="@+id/smile_rating3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="540dp"
+                    tools:ignore="MissingConstraints" />
+            </RelativeLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_width="298dp"
+                android:layout_height="96dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="630dp"
+                app:cardCornerRadius="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/subject6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </androidx.cardview.widget.CardView>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.hsalf.smilerating.SmileRating
+                    android:id="@+id/smile_rating14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="740dp"
+                    tools:ignore="MissingConstraints" />
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="5. Individual delelopment tools for student"
+                android:textSize="20dp"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="810dp"
+                android:layout_marginStart="5dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Artificial Intelligence-Riddhi Patel"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="20dp"
+                android:layout_marginTop="860dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.hsalf.smilerating.SmileRating
+                    android:id="@+id/smile_rating4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="890dp"
+                    tools:ignore="MissingConstraints" />
+            </RelativeLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="CNS-Manoj Sahu"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="20dp"
+                android:layout_marginTop="970dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.hsalf.smilerating.SmileRating
+                    android:id="@+id/smile_rating5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1000dp"
+                    tools:ignore="MissingConstraints" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Python Programming -Bela mam"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="20dp"
+                android:layout_marginTop="1070dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.hsalf.smilerating.SmileRating
+                    android:id="@+id/smile_rating6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1100dp"
+                    tools:ignore="MissingConstraints" />
+            </RelativeLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_width="298dp"
+                android:layout_height="96dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="1180dp"
+                app:cardCornerRadius="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/subject2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </androidx.cardview.widget.CardView>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.hsalf.smilerating.SmileRating
+                    android:id="@+id/smile_rating7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1280dp"
+                    tools:ignore="MissingConstraints" />
+            </RelativeLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_width="298dp"
+                android:layout_height="96dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="1360dp"
+                app:cardCornerRadius="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/subject7"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </androidx.cardview.widget.CardView>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.hsalf.smilerating.SmileRating
+                    android:id="@+id/smile_rating18"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1460dp"
+                    tools:ignore="MissingConstraints" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="6. Run every practcal by their own"
+                android:textSize="20dp"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="1530dp"
+                android:layout_marginStart="5dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Artificial Intelligence-Riddhi Patel"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="20dp"
+                android:layout_marginTop="1570dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.hsalf.smilerating.SmileRating
+                    android:id="@+id/smile_rating8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1600dp"
+                    tools:ignore="MissingConstraints" />
+            </RelativeLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="CNS-Manoj Sahu"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="20dp"
+                android:layout_marginTop="1670dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.hsalf.smilerating.SmileRating
+                    android:id="@+id/smile_rating9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1700dp"
+                    tools:ignore="MissingConstraints" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Python Programming -Bela mam"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="20dp"
+                android:layout_marginTop="1770dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.hsalf.smilerating.SmileRating
+                    android:id="@+id/smile_rating10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1800dp"
+                    tools:ignore="MissingConstraints" />
+            </RelativeLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_width="298dp"
+                android:layout_height="96dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="1880dp"
+                app:cardCornerRadius="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/subject3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </androidx.cardview.widget.CardView>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.hsalf.smilerating.SmileRating
+                    android:id="@+id/smile_rating11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1980dp"
+                    tools:ignore="MissingConstraints" />
+            </RelativeLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_width="298dp"
+                android:layout_height="96dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="2060dp"
+                app:cardCornerRadius="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/subject4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </androidx.cardview.widget.CardView>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.hsalf.smilerating.SmileRating
+                    android:id="@+id/smile_rating12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2170dp"
+                    tools:ignore="MissingConstraints" />
+            </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="150dp"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/edittext"
+                android:drawableLeft="@drawable/ic_user"
+                android:hint="Username"
+                android:textColorHint="@android:color/black"
+                android:textColor="@android:color/black"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/edittext"
+                android:drawableLeft="@drawable/ic_security"
+                android:hint="Password"
+                android:textColorHint="@android:color/black"
+                android:textColor="@android:color/black"
+                android:textSize="20dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Password must have contain atleast 4 letters in that one Uppercase character,one special character and one digit"
+                android:textSize="10dp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"/>
+
+
+
+            <Button
+                android:id="@+id/login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button"
+                android:drawableLeft="@drawable/ic_signin"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Login"
+                android:textColor="@android:color/black"
+                android:textSize="20dp"
+                android:onClick="sem"/>
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

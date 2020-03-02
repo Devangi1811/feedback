@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:title="@string/home" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_signin"
+            android:title="@string/login" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_signin"
+            android:title="@string/signup" />
+        <item
+            android:id="@+id/nav_tools"
+            android:icon="@drawable/ic_class"
+            android:title="@string/semester" />
+        <item
+            android:id="@+id/branch"
+            android:icon="@drawable/ic_class"
+            android:title="branch"/>
+        <item
+            android:id="@+id/class4"
+            android:icon="@drawable/ic_class"
+            android:title="class"/>
+    </group>
+
+
+</menu>

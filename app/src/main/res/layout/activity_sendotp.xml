@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".sendotp"
+    android:background="@drawable/login">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/email2"
+            android:drawableLeft="@drawable/ic_email_black_24dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:hint="E-mail"
+            android:textColorHint="@android:color/black"
+            android:textColor="@android:color/black"/>
+
+        <EditText
+            android:id="@+id/ph.no."
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Phone No."
+            android:inputType="number"
+            android:textColorHint="@android:color/black"
+            android:background="@drawable/phone2"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:drawableLeft="@drawable/ic_contact_phone_black_24dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@android:color/white"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Send me OTP"
+            android:textColor="@android:color/black"
+            android:textSize="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/otp1"
+            android:onClick="writeotp"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
