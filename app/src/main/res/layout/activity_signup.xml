@@ -14,7 +14,7 @@
         android:layout_height="match_parent"
         android:layout_marginStart="1dp"
         android:layout_marginEnd="1dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,6 +33,7 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginTop="70dp"
+        android:layout_marginBottom="30dp"
         android:layout_height="match_parent">
 
         <EditText
@@ -114,11 +115,23 @@
             android:text="Create account"
             android:textColor="@android:color/black"
             android:textSize="20dp"
-            android:onClick="subject"/>
+            android:onClick="selectfaculty"/>
 
-
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/sign_in_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_gravity="center_horizontal"/>
 
     </LinearLayout>
+
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/login_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp"/>
     </LinearLayout>
     </ScrollView>
 

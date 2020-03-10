@@ -99,7 +99,15 @@ public class account extends AppCompatActivity{
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()) {
+                    mAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            Toast.makeText(account.this,"Verification email sent to"+Email,Toast.LENGTH_SHORT).show();
+                        }
+                    });
                     Toast.makeText(account.this,"User login successfully",Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(account.this, selectfaculty.class);
+                    startActivity(intent);
                 }else{
                     Toast.makeText(account.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                 }
@@ -117,10 +125,14 @@ public class account extends AppCompatActivity{
         string +="\n";
         string +="Password"+Password.getText().toString();
         Toast.makeText(this,string,Toast.LENGTH_SHORT).show();
-        Intent intent=new Intent(account.this,subject.class);
+        Intent intent=new Intent(account.this,selectfaculty.class);
         startActivity(intent);
     }
 
     public void signup(View view) {startActivity(new Intent(getApplicationContext(),signup.class));
+    }
+
+    public void selectfaculty(View view) {
+        startActivity(new Intent(getApplicationContext(),selectfaculty.class));
     }
 }

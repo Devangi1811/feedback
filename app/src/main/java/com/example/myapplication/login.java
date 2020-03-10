@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
@@ -22,6 +23,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.hitomi.cmlibrary.CircleMenu;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -46,7 +48,6 @@ public class login extends AppCompatActivity {
     private FirebaseAuth mAuth;
     String email;
     String password;
-
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +56,6 @@ public class login extends AppCompatActivity {
 
         Email = findViewById(R.id.email);
         Password = findViewById(R.id.password);
-        btn = findViewById(R.id.login);
         mAuth = FirebaseAuth.getInstance();
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,29 +101,34 @@ public class login extends AppCompatActivity {
     }
 
     void loginuser() {
-      email=Email.getText().toString().trim();
-      password=Password.getText().toString().trim();
-      validateEmail();
-      validatePassword();
+        email = Email.getText().toString().trim();
+        password = Password.getText().toString().trim();
+        validateEmail();
+        validatePassword();
 
-      mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-          @Override
-          public void onComplete(@NonNull Task<AuthResult> task) {
-              if (task.isSuccessful()) {
-                  Toast.makeText(login.this,"User login successfully",Toast.LENGTH_SHORT).show();
-                  Intent intent = new Intent(login.this, subject.class);
-                  startActivity(intent);
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    mAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            Toast.makeText(login.this,"Verification email sent to"+Email,Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                    Toast.makeText(login.this, "User login successfully", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(login.this, selectfaculty.class);
+                    startActivity(intent);
 
 
-              } else {
-                  Toast.makeText(login.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-              }
+                } else {
+                    Toast.makeText(login.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                }
 
-          }
-      });
+            }
+        });
 
     }
-
     public void confirm(View v){
         if(!validateEmail() | !validatePassword()){
             return;
@@ -133,23 +138,11 @@ public class login extends AppCompatActivity {
         string +="\n";
         string +="Password"+Password.getText().toString();
         Toast.makeText(this,string,Toast.LENGTH_SHORT).show();
-        Intent intent=new Intent(login.this,subject.class);
+        Intent intent=new Intent(login.this,selectfaculty.class);
         startActivity(intent);
     }
-
-
-
-
-    public void btn_button1(View view) {
-        startActivity(new Intent(getApplicationContext(), signup.class));
-    }
-
-    public void edit_text(View view) {
-        startActivity(new Intent(getApplicationContext(), sendotp.class));
-    }
-
-    public void sem(View view) {
-        startActivity(new Intent(getApplicationContext(), sem.class));
+    public void selectfaculty(View view) {
+        startActivity(new Intent(getApplicationContext(),selectfaculty.class));
     }
 
     public void signup(View view) {

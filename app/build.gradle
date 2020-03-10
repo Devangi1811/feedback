@@ -49,6 +49,10 @@ dependencies {
     implementation 'com.github.sujithkanna:smileyrating:1.6.8'
     implementation 'com.firebase:firebase-client-android:2.4.0'
     implementation 'com.google.firebase:firebase-firestore:21.4.1'
+    implementation 'com.github.Hitomis:CircleMenu:v1.0.1'
+    implementation 'com.google.firebase:firebase-core:17.0.0'
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
+    implementation 'com.facebook.android:facebook-android-sdk:[6,7)'
 
 
 }

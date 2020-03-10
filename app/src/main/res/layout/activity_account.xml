@@ -49,7 +49,8 @@
             android:fontFamily="sans-serif-condensed"
             android:text="Login"
             android:textColor="@android:color/black"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:onClick="selectfaculty"/>
         <TextView
             android:id="@+id/acco"
             android:layout_width="match_parent"

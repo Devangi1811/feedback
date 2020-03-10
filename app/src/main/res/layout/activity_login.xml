@@ -67,7 +67,7 @@
                 android:text="Login"
                 android:textColor="@android:color/black"
                 android:textSize="20dp"
-                android:onClick="sem"/>
+                android:onClick="selectfaculty"/>
 
             <TextView
                 android:id="@+id/acc"

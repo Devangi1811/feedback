@@ -25,18 +25,17 @@ public class abhi extends AppCompatActivity {
         setContentView(R.layout.activity_abhi);
     }
 
+    public void account(View view) {
+        startActivity(new Intent(getApplicationContext(),account.class));
+    }
+
+    public void login(View view) {
+        startActivity(new Intent(getApplicationContext(),login.class));
+    }
 
 
-   // @Override
+    // @Override
     //public boolean onNavigationItemSelected(MenuItem menuItem) {
-       // return  true;
-   // }
-
-
-
-    public void login(View view) {startActivity(new Intent(getApplicationContext(),login.class));
-    }
-    public void account(View view) {startActivity(new Intent(getApplicationContext(),account.class));
-    }
-
+    // return  true;
+    // }
 }

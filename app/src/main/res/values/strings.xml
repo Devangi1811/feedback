@@ -33,6 +33,10 @@
         <item>User login</item>
         <item>Admin login</item>
     </string-array>
+    <string-array name="subject1">
+        <item>Android</item>
+        <item>Machine Learing</item>
+    </string-array>
 
     <string-array name="subject2">
         <item>Android</item>
@@ -42,4 +46,14 @@
         <item>Android</item>
         <item>Machine Learing</item>
     </string-array>
+    <string-array name="numbers">
+        <item>Android</item>
+        <item>Machine Learing</item>
+    </string-array>
+    <string-array name="numbers1">
+        <item>IOT</item>
+        <item>SC</item>
+    </string-array>
+    <string name="facebook_app_id">2234223170219693</string>
+    <string name="fb_login_protocol_scheme">fb2234223170219693</string>
 </resources>
