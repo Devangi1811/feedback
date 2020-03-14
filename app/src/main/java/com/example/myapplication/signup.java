@@ -72,6 +72,7 @@ public class signup extends AppCompatActivity {
     private static final String Tag="FacebookAuthentication";
     private FirebaseAuth.AuthStateListener authStateListener;
     private AccessTokenTracker accessTokenTracker;
+    public static final String USER_ID="userid";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

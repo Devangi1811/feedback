@@ -5,18 +5,139 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.hsalf.smilerating.SmileRating;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
 public class question extends AppCompatActivity {
+    private FirebaseAuth mAuth;
+    private DatabaseReference db;
+    private Button btn;
+    SmileRating smileRating;
+    SmileRating smileRating1;
+    SmileRating smileRating2;
+    SmileRating smileRating3;
+    SmileRating smileRating4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
-        SmileRating smileRating=(findViewById(R.id.smile_rating));
+        Intent i=getIntent();
+        String sun=i.getStringExtra("subjectname");
+        mAuth=FirebaseAuth.getInstance();
+       db=FirebaseDatabase.getInstance().getReference().child("subjectname").child(mAuth.getCurrentUser().getUid()).child("ai");
+        db=FirebaseDatabase.getInstance().getReference().child("subjectname").child(mAuth.getCurrentUser().getUid()).child(sun);
+        btn=findViewById(R.id.abhi);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                validate();
+            }
+        });
+        smileRating=(findViewById(R.id.smile_rating));
+         smileRating1=(findViewById(R.id.smile_rating1));
+         smileRating2=(findViewById(R.id.smile_rating2));
+         smileRating3=(findViewById(R.id.smile_rating3));
+         smileRating4=(findViewById(R.id.smile_rating4));
         smileRating.setOnSmileySelectionListener(new SmileRating.OnSmileySelectionListener() {
+            @Override
+            public void onSmileySelected(int smiley, boolean reselected) {
+                switch (smiley) {
+                    case SmileRating.BAD:
+                        Toast.makeText(question.this,"BAD",Toast.LENGTH_SHORT).show();
+                        break;
+                    case SmileRating.GOOD:
+                        Toast.makeText(question.this, "Good",Toast.LENGTH_SHORT).show();
+                        break;
+                    case SmileRating.GREAT:
+                        Toast.makeText(question.this, "Great",Toast.LENGTH_SHORT).show();
+                        break;
+                    case SmileRating.OKAY:
+                        Toast.makeText(question.this, "Okay",Toast.LENGTH_SHORT).show();
+                        break;
+                    case SmileRating.TERRIBLE:
+                        Toast.makeText(question.this, "Terrible",Toast.LENGTH_SHORT).show();
+                        break;
+                }
+            }
+        });
+
+        smileRating1.setOnSmileySelectionListener(new SmileRating.OnSmileySelectionListener() {
+            @Override
+            public void onSmileySelected(int smiley, boolean reselected) {
+                switch (smiley) {
+                    case SmileRating.BAD:
+                        Toast.makeText(question.this,"BAD",Toast.LENGTH_SHORT).show();
+                        break;
+                    case SmileRating.GOOD:
+                        Toast.makeText(question.this, "Good",Toast.LENGTH_SHORT).show();
+                        break;
+                    case SmileRating.GREAT:
+                        Toast.makeText(question.this, "Great",Toast.LENGTH_SHORT).show();
+                        break;
+                    case SmileRating.OKAY:
+                        Toast.makeText(question.this, "Okay",Toast.LENGTH_SHORT).show();
+                        break;
+                    case SmileRating.TERRIBLE:
+                        Toast.makeText(question.this, "Terrible",Toast.LENGTH_SHORT).show();
+                        break;
+                }
+            }
+        });
+        smileRating2.setOnSmileySelectionListener(new SmileRating.OnSmileySelectionListener() {
+            @Override
+            public void onSmileySelected(int smiley, boolean reselected) {
+                switch (smiley) {
+                    case SmileRating.BAD:
+                        Toast.makeText(question.this,"BAD",Toast.LENGTH_SHORT).show();
+                        break;
+                    case SmileRating.GOOD:
+                        Toast.makeText(question.this, "Good",Toast.LENGTH_SHORT).show();
+                        break;
+                    case SmileRating.GREAT:
+                        Toast.makeText(question.this, "Great",Toast.LENGTH_SHORT).show();
+                        break;
+                    case SmileRating.OKAY:
+                        Toast.makeText(question.this, "Okay",Toast.LENGTH_SHORT).show();
+                        break;
+                    case SmileRating.TERRIBLE:
+                        Toast.makeText(question.this, "Terrible",Toast.LENGTH_SHORT).show();
+                        break;
+                }
+            }
+        });
+        smileRating3.setOnSmileySelectionListener(new SmileRating.OnSmileySelectionListener() {
+            @Override
+            public void onSmileySelected(int smiley, boolean reselected) {
+                switch (smiley) {
+                    case SmileRating.BAD:
+                        Toast.makeText(question.this,"BAD",Toast.LENGTH_SHORT).show();
+                        break;
+                    case SmileRating.GOOD:
+                        Toast.makeText(question.this, "Good",Toast.LENGTH_SHORT).show();
+                        break;
+                    case SmileRating.GREAT:
+                        Toast.makeText(question.this, "Great",Toast.LENGTH_SHORT).show();
+                        break;
+                    case SmileRating.OKAY:
+                        Toast.makeText(question.this, "Okay",Toast.LENGTH_SHORT).show();
+                        break;
+                    case SmileRating.TERRIBLE:
+                        Toast.makeText(question.this, "Terrible",Toast.LENGTH_SHORT).show();
+                        break;
+                }
+            }
+        });
+        smileRating4.setOnSmileySelectionListener(new SmileRating.OnSmileySelectionListener() {
             @Override
             public void onSmileySelected(int smiley, boolean reselected) {
                 switch (smiley) {
@@ -43,8 +164,71 @@ public class question extends AppCompatActivity {
             public void onRatingSelected(int level, boolean reselected) {
                 Toast.makeText(question.this,"Selected rating"+level,Toast.LENGTH_SHORT).show();
 
+
             }
         });
+        smileRating1.setOnRatingSelectedListener(new SmileRating.OnRatingSelectedListener() {
+            @Override
+            public void onRatingSelected(int level, boolean reselected) {
+                Toast.makeText(question.this,"Selected rating"+level,Toast.LENGTH_SHORT).show();
+
+
+            }
+        });
+        smileRating2.setOnRatingSelectedListener(new SmileRating.OnRatingSelectedListener() {
+            @Override
+            public void onRatingSelected(int level, boolean reselected) {
+                Toast.makeText(question.this,"Selected rating"+level,Toast.LENGTH_SHORT).show();
+
+
+            }
+        });
+        smileRating3.setOnRatingSelectedListener(new SmileRating.OnRatingSelectedListener() {
+            @Override
+            public void onRatingSelected(int level, boolean reselected) {
+                Toast.makeText(question.this,"Selected rating"+level,Toast.LENGTH_SHORT).show();
+
+
+            }
+        });
+        smileRating4.setOnRatingSelectedListener(new SmileRating.OnRatingSelectedListener() {
+            @Override
+            public void onRatingSelected(int level, boolean reselected) {
+                Toast.makeText(question.this,"Selected rating"+level,Toast.LENGTH_SHORT).show();
+
+
+            }
+        });
+    }
+    public void validate(){
+        int level = smileRating.getRating();
+        if(level == 0){
+            return;
+        }
+        int level1 = smileRating1.getRating();
+        if(level1 == 0){
+            return;
+        }
+        int level2 = smileRating2.getRating();
+        if(level2 == 0){
+            return;
+        }
+        int level3 = smileRating3.getRating();
+        if(level3 == 0){
+            return;
+        }
+        int level4 = smileRating4.getRating();
+        if(level4 == 0){
+            return;
+        }
+        Map<String,Integer> sub=new HashMap<>();
+        sub.put("1",level);
+        sub.put("2",level1);
+        sub.put("3",level2);
+        sub.put("4",level3);
+        sub.put("5",level4);
+        db.setValue(sub);
+
     }
 
     public void subject2(View view) {
