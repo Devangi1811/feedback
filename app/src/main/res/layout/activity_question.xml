@@ -24,7 +24,7 @@
         <RelativeLayout
             android:id="@+id/llv"
             android:layout_width="match_parent"
-            android:layout_height="820dp"
+            android:layout_height="1450dp"
             android:layout_marginTop="10dp"
             android:orientation="vertical">
             <TextView
@@ -58,7 +58,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="2. completes syllabus of the course in time"
+                android:text="2. Completes syllabus of the cource in time"
                 android:textColor="@android:color/holo_red_dark"
                 android:textSize="20dp"
                 android:layout_marginTop="190dp"/>
@@ -93,7 +93,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="4.Self-confidence"
+                android:text="4.class test,assignments and seminars"
                 android:textColor="@android:color/holo_red_dark"
                 android:textSize="20dp"
                 android:layout_marginTop="460dp"/>
@@ -125,6 +125,97 @@
                     tools:ignore="MissingConstraints" />
             </RelativeLayout>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="6. Self-Confidence"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="20dp"
+                android:layout_marginTop="720dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.hsalf.smilerating.SmileRating
+                    android:id="@+id/smile_rating5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="760dp"
+                    tools:ignore="MissingConstraints" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="7. Teaching the subject matters"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="20dp"
+                android:layout_marginTop="850dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.hsalf.smilerating.SmileRating
+                    android:id="@+id/smile_rating6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="890dp"
+                    tools:ignore="MissingConstraints" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="8. prvoding study material,e-journals,open course wares"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="20dp"
+                android:layout_marginTop="970dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.hsalf.smilerating.SmileRating
+                    android:id="@+id/smile_rating7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1030dp"
+                    tools:ignore="MissingConstraints" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="9. Help students in realizing career goals"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="20dp"
+                android:layout_marginTop="1100dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.hsalf.smilerating.SmileRating
+                    android:id="@+id/smile_rating8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1150dp"
+                    tools:ignore="MissingConstraints" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="10. realizing students their strenghts and give motivition"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="20dp"
+                android:layout_marginTop="1220dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.hsalf.smilerating.SmileRating
+                    android:id="@+id/smile_rating9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1270dp"
+                    tools:ignore="MissingConstraints" />
+            </RelativeLayout>
+
+
 
 
 
@@ -136,9 +227,9 @@
                 android:id="@+id/abhi"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="740dp"
+                android:layout_marginTop="1370dp"
                 android:layout_marginStart="208dp"
-                android:text="next"
+                android:text="submit"
                 android:textSize="30dp"
                 android:textColor="@android:color/black"
                 android:fontFamily="sans-serif-condensed"

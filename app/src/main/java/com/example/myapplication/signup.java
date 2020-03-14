@@ -164,6 +164,8 @@ public class signup extends AppCompatActivity {
                 }else{
                     Toast.makeText(signup.this,"signIn Successfully",Toast.LENGTH_SHORT).show();
                     updateUI(null);
+                    Intent intent=new Intent(signup.this,selectfaculty.class);
+                    startActivity(intent);
                 }
 
             }
@@ -174,6 +176,8 @@ public class signup extends AppCompatActivity {
         Toast.makeText(signup.this,"signIn successfully",Toast.LENGTH_SHORT).show();
         Intent signInIntent=mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent,RC_SIGN_IN);
+        Intent intent=new Intent(signup.this,selectfaculty.class);
+        startActivity(intent);
     }
    protected  void onActivityResult(int requestCode ,int resultCode,Intent data) {
         mCallbackManager.onActivityResult(requestCode, resultCode, data);
@@ -189,6 +193,8 @@ public class signup extends AppCompatActivity {
             GoogleSignInAccount acc=completedTask.getResult(ApiException.class);
             Toast.makeText(signup.this,"SignIn Successfully",Toast.LENGTH_SHORT).show();
             FirebaseGoogleAuth(acc);
+            Intent intent=new Intent(signup.this,selectfaculty.class);
+            startActivity(intent);
         }catch (ApiException e){
             Toast.makeText(signup.this,"SignIn failed",Toast.LENGTH_SHORT).show();
             FirebaseGoogleAuth(null);

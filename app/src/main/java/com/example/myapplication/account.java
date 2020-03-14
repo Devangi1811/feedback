@@ -149,9 +149,13 @@ public class account extends AppCompatActivity{
                 if(task.isSuccessful()){
                     Toast.makeText(account.this,"signIn Successfully",Toast.LENGTH_SHORT).show();
                     FirebaseUser urs=mAuth.getCurrentUser();
+                    Intent intent=new Intent(account.this,selectfaculty.class);
+                    startActivity(intent);
                     updateUI(urs);
                 }else{
                     Toast.makeText(account.this,"signIn Successfully",Toast.LENGTH_SHORT).show();
+                    Intent intent=new Intent(account.this,selectfaculty.class);
+                    startActivity(intent);
                     updateUI(null);
                 }
 
@@ -163,6 +167,8 @@ public class account extends AppCompatActivity{
         Toast.makeText(account.this,"signIn successfully",Toast.LENGTH_SHORT).show();
         Intent signInIntent=mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent,RC_SIGN_IN);
+        Intent intent=new Intent(account.this,selectfaculty.class);
+        startActivity(intent);
     }
     protected  void onActivityResult(int requestCode ,int resultCode,Intent data) {
         mCallbackManager.onActivityResult(requestCode, resultCode, data);
@@ -170,6 +176,8 @@ public class account extends AppCompatActivity{
         if(resultCode==RC_SIGN_IN){
             Task<GoogleSignInAccount> task=GoogleSignIn.getSignedInAccountFromIntent(data);
             handleSignInResult(task);
+            Intent intent=new Intent(account.this,selectfaculty.class);
+            startActivity(intent);
         }
     }
 
@@ -178,6 +186,8 @@ public class account extends AppCompatActivity{
             GoogleSignInAccount acc=completedTask.getResult(ApiException.class);
             Toast.makeText(account.this,"SignIn Successfully",Toast.LENGTH_SHORT).show();
             FirebaseGoogleAuth(acc);
+            Intent intent=new Intent(account.this,selectfaculty.class);
+            startActivity(intent);
         }catch (ApiException e){
             Toast.makeText(account.this,"SignIn failed",Toast.LENGTH_SHORT).show();
             FirebaseGoogleAuth(null);
@@ -193,6 +203,8 @@ public class account extends AppCompatActivity{
                     Toast.makeText(account.this,"Successful",Toast.LENGTH_SHORT).show();
                     FirebaseUser usr=mAuth.getCurrentUser();
                     updateUI(usr);
+                    Intent intent=new Intent(account.this,selectfaculty.class);
+                    startActivity(intent);
                 }
                 else{
                     Toast.makeText(account.this,"Failed",Toast.LENGTH_SHORT).show();
@@ -212,6 +224,7 @@ public class account extends AppCompatActivity{
             String personEmail=accou.getEmail();
             String personId=accou.getId();
             Toast.makeText(account.this,personName + personEmail,Toast.LENGTH_SHORT).show();
+
         }
     }
 
