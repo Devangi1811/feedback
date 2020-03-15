@@ -293,8 +293,6 @@ public class account extends AppCompatActivity{
         string +="\n";
         string +="Password"+Password.getText().toString();
         Toast.makeText(this,string,Toast.LENGTH_SHORT).show();
-        Intent intent=new Intent(account.this,selectfaculty.class);
-        startActivity(intent);
     }
     protected void onStart() {
 

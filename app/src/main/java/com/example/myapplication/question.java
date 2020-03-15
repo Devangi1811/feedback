@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,8 +10,11 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.hsalf.smilerating.SmileRating;
 
 import java.util.HashMap;
@@ -38,9 +42,11 @@ public class question extends AppCompatActivity {
         setContentView(R.layout.activity_question);
         Intent i=getIntent();
         String sun=i.getStringExtra("subjectname");
+        final String rat=i.getStringExtra("averagerating");
         mAuth=FirebaseAuth.getInstance();
-       db=FirebaseDatabase.getInstance().getReference().child("subjectname").child(mAuth.getCurrentUser().getUid()).child("ai");
+        db=FirebaseDatabase.getInstance().getReference().child("subjectname").child(mAuth.getCurrentUser().getUid()).child("ai");
         db=FirebaseDatabase.getInstance().getReference().child("subjectname").child(mAuth.getCurrentUser().getUid()).child(sun);
+        db=FirebaseDatabase.getInstance().getReference().child("averagerating").child(rat);
         btn=findViewById(R.id.abhi);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,10 +55,10 @@ public class question extends AppCompatActivity {
             }
         });
         smileRating=(findViewById(R.id.smile_rating));
-         smileRating1=(findViewById(R.id.smile_rating1));
-         smileRating2=(findViewById(R.id.smile_rating2));
-         smileRating3=(findViewById(R.id.smile_rating3));
-         smileRating4=(findViewById(R.id.smile_rating4));
+        smileRating1=(findViewById(R.id.smile_rating1));
+        smileRating2=(findViewById(R.id.smile_rating2));
+        smileRating3=(findViewById(R.id.smile_rating3));
+        smileRating4=(findViewById(R.id.smile_rating4));
         smileRating5=(findViewById(R.id.smile_rating5));
         smileRating6=(findViewById(R.id.smile_rating6));
         smileRating7=(findViewById(R.id.smile_rating7));
@@ -413,7 +419,32 @@ public class question extends AppCompatActivity {
         sub.put("9",level8);
         sub.put("10",level9);
         db.setValue(sub);
+        rating();
 
+    }
+    public void rating(){
+        db.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                double total = 0.0;
+                double count = 0.0;
+                double average = 0.0;
+                for(DataSnapshot ds: dataSnapshot.getChildren()) {
+                    double rating = Double.parseDouble(ds.child("averagerating").getValue().toString());
+                    total = total + rating;
+                    count = count + 1;
+                    average = total / count;
+                }
+                final DatabaseReference newRef = db.child("averageRating");
+                newRef.child("current").setValue(average);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                throw databaseError.toException();
+
+            }
+        });
     }
 
     public void subject2(View view) {
