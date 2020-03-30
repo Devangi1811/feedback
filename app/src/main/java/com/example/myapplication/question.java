@@ -23,7 +23,7 @@ import java.util.Objects;
 
 public class question extends AppCompatActivity {
     private FirebaseAuth mAuth;
-    private DatabaseReference db;
+    private DatabaseReference db,db1,db2;
     private Button btn;
     SmileRating smileRating;
     SmileRating smileRating1;
@@ -42,11 +42,11 @@ public class question extends AppCompatActivity {
         setContentView(R.layout.activity_question);
         Intent i=getIntent();
         String sun=i.getStringExtra("subjectname");
-        final String rat=i.getStringExtra("averagerating");
+        final String rate=i.getStringExtra("averagerating");
         mAuth=FirebaseAuth.getInstance();
         db=FirebaseDatabase.getInstance().getReference().child("subjectname").child(mAuth.getCurrentUser().getUid()).child("ai");
-        db=FirebaseDatabase.getInstance().getReference().child("subjectname").child(mAuth.getCurrentUser().getUid()).child(sun);
-        db=FirebaseDatabase.getInstance().getReference().child("averagerating").child(rat);
+        db1=FirebaseDatabase.getInstance().getReference().child("subjectname").child(mAuth.getCurrentUser().getUid()).child(sun);
+        db2 =FirebaseDatabase.getInstance().getReference().child("averagerating").child(rate);
         btn=findViewById(R.id.abhi);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -423,7 +423,7 @@ public class question extends AppCompatActivity {
 
     }
     public void rating(){
-        db.addValueEventListener(new ValueEventListener() {
+        db2.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 double total = 0.0;
